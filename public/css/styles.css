@@ -1,0 +1,452 @@
+html, body{
+  background-color: #fffff2;
+  min-width: fit-content;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+/***************************************************
+GENERAL
+***************************************************/
+.figure-caption{
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+a.footer-login-link {
+    color: white;
+}
+a.footer-login-link:hover {
+    color: #ececec;
+}
+
+form.form-signin {
+    text-align: center;
+}
+
+p a{
+  color: #dc3545;
+}
+
+p.home-blurb{
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 400;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #920815;
+}
+
+.padding-btm-10 {
+	padding-bottom: 10px;
+}
+.padding-btm-20 {
+	padding-bottom: 20px;
+}
+.padding-btm-30 {
+	padding-bottom: 30px;
+}
+.padding-btm-40 {
+	padding-bottom: 40px;
+}
+.padding-btm-50 {
+	padding-bottom: 50px;
+}
+.padding-btm-60 {
+	padding-bottom: 60px;
+}
+
+.margin-btm-10 {
+	margin-bottom: 10px;
+}
+.margin-btm-20 {
+	margin-bottom: 20px;
+}
+.margin-btm-30 {
+	margin-bottom: 30px;
+}
+.margin-btm-40 {
+	margin-bottom: 40px;
+}
+.margin-btm-50 {
+	margin-bottom: 50px;
+}
+.margin-btm-60 {
+	margin-bottom: 60px;
+}
+
+hr.half-line{
+  border-top: 1px solid #2c2c2c;
+}
+
+a.more-recipes-btn {
+    float: right;
+}
+
+.summary{
+  text-align: center;
+    font-size: 1.2rem;
+}
+
+section [class*="btn"]{
+  display: block;
+  /* width: 200px; */
+  padding: 1em;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid white;
+  border-radius: 20px;
+}
+
+section [class*="btn"]:hover{
+  display: block;
+ width: 200px;
+  padding: 1em;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #E6dbc9 !important;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid white;
+  border-radius: 20px;
+  //background-color: rgba(30, 72, 133, 0.8);
+}
+
+table#recipe-list {
+    text-align: center;
+}
+
+td.action-items > button {
+    display: inline-flex;
+    margin: 5px;
+}
+
+
+.feed-title{
+  font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 32px;
+    padding: 24px 10px;
+}
+
+.feed-title a{
+  color: #dc3645;
+}
+
+.feed-title a:hover{
+  text-decoration: none;
+  color: #920815;
+}
+/***************************************************
+Logo
+***************************************************/
+
+.sitehead-logo {
+    text-align: center;
+    /* background-color: aliceblue; */
+}
+
+img.adobobacon-logo {
+    height: 250px;
+    width: 250px;
+    object-fit: fill;
+}
+
+
+/***************************************************
+Heros
+***************************************************/
+
+.hero-home{
+  width:100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('https://i.imgur.com/xTb1v6f.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.hero-footer{
+  width:100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('https://i.imgur.com/TbGd3Oz.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/***************************************************
+NAVBAR
+***************************************************/
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+    background: #0d1010;
+    width: 100vw;
+}
+li.nav-item {
+    padding-right: 30px;
+    font-size: 18px;
+}
+.navbar-toggler-icon{
+  color: #2c2c2c !important;
+}
+.navbar-brand{
+  color: #fff !important;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.navbar-nav  li a {
+    color: #fdfefd!important;
+    font-weight:bold;
+}
+.navbar-nav  li a:hover {
+    color: #B8B9B8 !important;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    background-color: #0d1010;
+}
+
+/***************************************************
+MISC
+***************************************************/
+img.floated {
+    /* float: left; */
+    height: 350px;
+}
+
+img.home-banner{
+  border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.header-title {
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-content: center;
+    height: 20rem;
+}
+
+.tags-list li {
+    display: inline-block;
+    /* margin: 5px; */
+}
+li.tag-keyword {
+    margin: 5px;
+}
+
+.cta-container {
+  background-position: center;
+  background-size: cover;
+
+  color: white;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  text-align: center;
+
+  }
+
+  .cta-info a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 300ms ease;
+  }
+  .cta-info a:hover{
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+.tag-item{
+  -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.56);
+  -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.56);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.56);
+  margin: 10px;
+  padding: 10px;
+}
+
+.tag-list-title a{
+  color: #dc3545;
+}
+.tag-list-title a:hover{
+  text-decoration: none;
+}
+
+.read-more{
+  color: #dc3545;
+}
+
+.read-more:hover{
+    text-decoration: none;
+color: #920815;
+}
+
+/***************************************************
+FOOTER
+***************************************************/
+.footer{
+  background: #0d1010;
+  color:white;
+}
+
+.footer p{
+  color: #e8554e !important;
+}
+
+.footer h4{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-copyright{
+  color:white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+/***************************************************
+ERRORS
+***************************************************/
+.hero-error-page{
+  width:100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../images/404.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-error-page a{
+  color: white;
+  text-decoration:underline !important;
+}
+
+.error-container{
+  width: 50%;
+  height: auto;
+  background-color: black;
+  opacity:0.8;
+  border-radius: 25px;
+  /* margin: 10px; */
+  padding: 20px;
+}
+
+.error-code{
+  text-align: center;
+}
+
+.error-title{
+  border-bottom: 1px solid white;
+  text-align: justify;
+}
+
+/***************************************************
+Social Media
+***************************************************/
+.social [class*="fa fa-"] {
+
+    background-color: #333;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    margin: auto 3px;
+    width: 50px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.social [class*="fa fa-facebook"]:hover {
+   background-color: #3b5998;
+
+}
+.social [class*="fa fa-instagram"]:hover {
+     background: linear-gradient(to bottom right, #4c68d7, #8a3ab9,#cd486b,#fbad50); /* Standard syntax */
+     border-radius: 70px;
+     border-radius: 50px;
+      height:50px;
+    line-height: 50px;
+    width: 50px;
+    font-size: 24px;
+}
+
+/***************************************************
+MEDIA QUERIES
+***************************************************/
+@media (max-width: 480px) {
+  .navbar {
+      background-color: #0d1010;
+  }
+  .navbar-nav  li a {
+      color: #fff !important;
+      font-weight:400;
+  }
+}

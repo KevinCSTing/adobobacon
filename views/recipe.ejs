@@ -1,0 +1,80 @@
+<!---------------------------------------------------------
+Start Header
+----------------------------------------------------------->
+<%- include("partials/header") -%>
+<meta property="og:title" content="Adobo Bacon | <%= recipeDetail.title %>">
+<meta property="og:description" content="<%= recipeDetail.summary %>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adobobacon.com/recipe/<%= recipeDetail.postURL %>">
+<meta property="og:image" content="<%= recipeDetail.imageUrl %>">
+<meta property="og:image:secure_url" content="<%= recipeDetail.imageUrl %>" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="800" />
+
+
+<title>Adobo Bacon | <%= recipeDetail.title %></title>
+
+</head>
+<body>
+<%- include("partials/navbar") -%>
+<!---------------------------------------------------------
+End Header
+----------------------------------------------------------->
+
+<div class="margin-btm-10"></div>
+<div class="container">
+  <div class="row header-title">
+    <div class="col-md-12">
+      <h3><%= recipeDetail.title %></h3>
+      <p><%= recipeDetail.postedOn %></p>
+    </div>
+  </div>
+
+<div class="margin-btm-20"></div>
+<div class="row">
+  <div class="col-md-12 summary">
+    <p><%= recipeDetail.summary %></p>
+  </div>
+</div>
+<div class="margin-btm-10"></div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="padding-btm-60"></div>
+      <img src="<%= recipeDetail.imageUrl %>" class="card-img-top recipe-page-image" alt="image of <%= recipeDetail.title %>">
+
+
+    </div>
+    <div class="col-md-6">
+      <div class="padding-btm-60"></div>
+          <%- recipeDetail.content %>
+          <div class="padding-btm-30"></div>
+
+    </div>
+  </div>
+  <div class="padding-btm-30"></div>
+  <hr class="half-line">
+<div class="row">
+  <div class="col-md-6">
+    <h3>Tags:</h3> <br>
+    <ul class="tags-list">
+      <% recipeDetail.postTags.forEach(function(item){%>
+        <li class="tag-keyword">  <a class="btn btn-info" href="/tags/<%= item %>"><%= item %></a> </li>
+      <% });%>
+    </ul>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <a href="/recipes" class="btn btn-danger more-recipes-btn"> More Recipes</a>
+
+  </div>
+</div>
+
+
+</div>
+<div class="padding-btm-60"></div>
+<%- include("partials/footer") -%>

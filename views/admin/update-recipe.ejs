@@ -1,0 +1,156 @@
+<!---------------------------------------------------------
+Start Header
+----------------------------------------------------------->
+<%- include("partials/header") -%>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Adobo Bacon">
+<meta property="og:description" content="Adobo Bacon is a personal database of recipes I've tried and have served to family and friends.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adobobacon.com/">
+<meta property="og:image" content="http://adobobacon.com/images/adobobacon-socmed-logo.png">
+<meta property="og:image:secure_url" content="https://adobobacon.com/images/adobobacon-socmed-logo.png" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+
+
+<title>Adobo Bacon </title>
+
+</head>
+<body>
+<%- include("partials/admin-navbar") -%>
+<!---------------------------------------------------------
+End Header
+----------------------------------------------------------->
+<div class="padding-btm-60"></div>
+
+
+<!-- Include Editor style. -->
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+        <strong>Reminders:</strong>
+        <ol>
+          <li>Give your recipe a meaningful <strong>title</strong>.</li>
+          <li>..and a catchy <strong>summary</strong>. This will be used in the teaser as well.</li>
+          <li>Make sure you upload a photo of the dish to imgur account: <strong><u>LearningToCook</u></strong>.</li>
+          <li>Use <strong>Ingredients</strong> and <strong>Instructions</strong> as your header titles. Use <strong><u>font size 18 and bold</u></strong></li>
+          <li>Body content should be size 14</li>
+        </ol>
+    </div>
+
+    <div class="col-md-8">
+
+    <form class="needs-validation" action="/update-recipe" method="post" novalidate>
+
+
+      <% recipe.forEach(function(item){%>
+       <div class="form-group">
+         <label for="dishTitle">Recipe name: </label>
+         <input type="text" class="form-control" name="dishTitle"  placeholder="Dish Name" autocomplete="off" value="<%= item.title %>" required>
+           <div class="invalid-feedback">
+           Well, you gotta give this a name!
+           </div>
+       </div>
+
+       <div class="form-group">
+         <label for="dishSummary">Summary:</label>
+         <textarea  type="text" class="form-control" name="dishSummary"  placeholder="Dish Summary" autocomplete="off" rows="3" required><%= item.summary %></textarea>
+           <div class="invalid-feedback">
+           Provide a quick summary of this dish.
+           </div>
+       </div>
+
+       <div class="form-group">
+         <input type="hidden" class="form-control" name="postURL" autocomplete="off" value="<%= item.postURL %>">
+       </div>
+
+       <div class="form-group">
+         <label for="dishLink">Link to Imgur Image:</label>
+         <input type="text" class="form-control" name="dishLink"  placeholder="Dish Imgur Link" autocomplete="off" value="<%= item.imageUrl %>" required>
+           <div class="invalid-feedback">
+           Don't forget to upload an image to imgur!
+           </div>
+       </div>
+
+       <div class="form-group">
+         <label for="dishContent">Ingredients and Instructions:</label>
+         <textarea id="dishContent" name="dishContent" required><%= item.content %></textarea>
+         <div class="invalid-feedback">
+         Can't expect people to follow your recipe if there aren't any instructions!
+         </div>
+       </div>
+
+       <div class="form-group">
+         <input type="hidden" class="form-control" name="postedOn"  autocomplete="off" value="<%= item.postedOn %>" >
+       </div>
+
+         <div class="form-group">
+         <label for="dishTags">Tags</label>
+         <input type="text" class="form-control" name="dishTags"  placeholder="Tags" autocomplete="off" value="<%= item.postTags %>" required>
+         <small class="form-text text-muted">Separate tags with a coma (",")</small>
+         <div class="invalid-feedback">
+         Tags help you organize your content. Put one at least!
+         </div>
+         </div>
+
+
+       <!-- End of text editor -->
+       <div class="form-group">
+         <button  type="submit" name="submitBtn" class="btn btn-primary" value="<%=item._id %>"> Save </button>
+         <button  type="button" name="cancelBtn" class="btn btn-danger" onclick="window.location.href='/admin/recipes-list'"> Cancel </button>
+       </div>
+
+      <% });%>
+
+   </form>
+
+
+
+
+
+
+   <script>
+   // Example starter JavaScript for disabling form submissions if there are invalid fields
+   (function() {
+     'use strict';
+     window.addEventListener('load', function() {
+       // Fetch all the forms we want to apply custom Bootstrap validation styles to
+       var forms = document.getElementsByClassName('needs-validation');
+       // Loop over them and prevent submission
+       var validation = Array.prototype.filter.call(forms, function(form) {
+         form.addEventListener('submit', function(event) {
+           if (form.checkValidity() === false) {
+             event.preventDefault();
+             event.stopPropagation();
+           }
+           form.classList.add('was-validated');
+         }, false);
+       });
+     }, false);
+   })();
+   </script>
+
+
+
+
+
+
+
+
+
+   </div>
+   </div>
+ </div>
+
+
+<!-- Include Editor JS files. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+
+<!-- Initialize the editor. -->
+<script>
+new FroalaEditor('textarea#dishContent', {key: "TEB9iB4C5D3A3H3A2c1C-22zpbnh1bgjhA6kfgwG1G1B2B1B1C7F6E1E4I4=="});
+</script>

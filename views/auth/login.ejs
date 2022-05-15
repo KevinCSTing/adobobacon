@@ -1,0 +1,64 @@
+<!---------------------------------------------------------
+Start Header
+----------------------------------------------------------->
+<%- include("partials/header") -%>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Adobo Bacon">
+<meta property="og:description" content="Adobo Bacon is a personal database of recipes I've tried and have served to family and friends.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adobobacon.com/">
+<meta property="og:image" content="http://adobobacon.com/images/adobobacon-socmed-logo.png">
+<meta property="og:image:secure_url" content="https://adobobacon.com/images/adobobacon-socmed-logo.png" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+
+
+<title>Adobo Bacon | Login </title>
+
+</head>
+<body>
+<%- include("partials/navbar") -%>
+<!---------------------------------------------------------
+End Header
+----------------------------------------------------------->
+
+<div class="margin-btm-60"></div>
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex justify-content-center">
+
+        <p><%- messages('messages', locals) %></p>
+
+        <div class="brand_logo_container">
+          <img class="img-fluid" src="../images/AdoboBaconLogo-transparent.svg" alt="adobobacon logo" height=150 width=150>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+        <form action="/login" method="POST">
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="email" name="username" class="form-control input_user" value="" placeholder="username" autocomplete="off">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" name="password" class="form-control input_pass" value="" placeholder="password" autocomplete="off">
+          </div>
+
+            <div class="d-flex justify-content-center mt-3 login_container">
+        <button type="submit" name="button" class="btn login_btn">Login</button>
+         </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<div class="padding-btm-60"></div>
+<%- include("partials/footer") -%>

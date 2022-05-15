@@ -1,0 +1,59 @@
+<!---------------------------------------------------------
+Start Header
+----------------------------------------------------------->
+<%- include("partials/header") -%>
+<meta property="og:title" content="Adobo Bacon">
+<meta property="og:description" content="Adobo Bacon is a personal database of recipes I've tried and have served to family and friends.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adobobacon.com/">
+<meta property="og:image" content="http://adobobacon.com/images/AdoboBacon_bg.png">
+<meta property="og:image:secure_url" content="https://adobobacon.com/images/AdoboBacon_bg.png" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="800" />
+
+
+<title>Adobo Bacon</title>
+
+</head>
+<body>
+<%- include("partials/navbar") -%>
+<!---------------------------------------------------------
+End Header
+----------------------------------------------------------->
+
+ <div class="padding-btm-60"></div>
+ <div class="container">
+
+  <%- include("partials/search-bar") %>
+
+
+<% if(recipes.length == 0){ %>
+  <h3>No results found for <%= query %> </h3>
+
+<% } else{ %>
+<h3>Top results for <%= query %> </h3>
+  <%  for(let i=0; i<recipes.length; i++) { %>
+
+
+
+    <div class="row tag-item">
+
+          <div class="col-md-2">
+          <img class="img-thumbnail" src="<%= recipes[i].imageUrl %>">
+          </div>
+
+          <div class="col-md-10">
+            <h3 class="tag-list-title"><a href="/recipe/<%= recipes[i].postURL %>"><%= recipes[i].title %></a></h3>
+            <hr>
+            <p class="tag-list-summary"><%= recipes[i].summary %></p>
+            <a class="read-more" href="/recipe/<%= recipes[i].postURL %>" >Read More</a>
+          </div>
+     </div>
+
+
+  <% } } %>
+
+ </div>
+ <div class="padding-btm-60"></div>
+<%- include("partials/footer") %>

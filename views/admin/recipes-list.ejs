@@ -1,0 +1,136 @@
+<!---------------------------------------------------------
+Start Header
+----------------------------------------------------------->
+<%- include("partials/header") -%>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Adobo Bacon">
+<meta property="og:description" content="Adobo Bacon is a personal database of recipes I've tried and have served to family and friends.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adobobacon.com/">
+<meta property="og:image" content="http://adobobacon.com/images/adobobacon-socmed-logo.png">
+<meta property="og:image:secure_url" content="https://adobobacon.com/images/adobobacon-socmed-logo.png" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+
+
+<title>Adobo Bacon </title>
+
+</head>
+<body>
+<%- include("partials/admin-navbar") -%>
+<!---------------------------------------------------------
+End Header
+----------------------------------------------------------->
+
+ <div class="margin-btm-60"></div>
+ <div class="container">
+
+   <div class="row">
+     <div class="col-md-12">
+       <p><%- messages('messages', locals) %></p>
+     </div>
+   </div>
+
+
+   <%- include("partials/admin-search-bar") -%>
+
+   <div class="row">
+     <div class="col-md-6">
+       <h2>Recipe List</h2>
+     </div>
+     <div class="col-md-6">
+       <a href="/admin/write-recipes" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Add a recipe</a>
+     </div>
+
+   </div>
+
+   <div class="row">
+
+     <div class="col-md-12">
+
+       <table id="recipe-list" class="table">
+         <thead>
+         <tr>
+           <th scope="col">Title</th>
+           <th scope="col">Posted On</th>
+           <th scope="col">Actions</th>
+         </tr>
+       </thead>
+       <tbody>
+       <% recipe.forEach(function(item){%>
+        <tr>
+         <td><strong><%= item.title %></strong></td>
+         <td><%= item.postedOn %> </td>
+         <td class="action-items">
+
+           <button type="button" name="button" title="View <%=item.title %>" class="btn btn-info" onclick="window.location.href='/admin/recipe/<%= item.postURL %>'">
+             <i class="fa fa-search" aria-hidden="true"></i>
+           </button>
+
+          <button type="button" name="button" title="Edit <%=item.title %>" class="btn btn-info" onclick="window.location.href='/admin/update-recipe/<%= item.postURL %>'">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+
+          <button type="button" class="btn btn-danger dropbtn" data-toggle="modal" data-target="#deleteModal" title="<%=item.title %>" name="<%= item._id %>">
+           <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+
+         </td>
+        </tr>
+       <% });%>
+
+
+
+     </tbody>
+    </table>
+
+
+     </div>
+
+   </div>
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="deleteModalLabel">Delete Recipe</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           Are you sure you want to delete <strong><label class="recipeTitle"></label></strong> ?
+         </div>
+         <div class="modal-footer">
+
+           <form class="" action="/delete-recipe" method="post">
+             <input type="hidden" name="recipeDeleteItem" class="hiddenValue" value="" />
+            <button type="submit"  class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+          </form>
+
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+   <script type="text/javascript">
+     $(document).ready(function(){
+       $('.dropbtn').click(function(){
+          var title = $(this).attr('title');
+          var name = $(this).attr('name');
+          $('.hiddenValue').val(name);
+          $('.recipeTitle').text(title);
+        })
+      })
+     </script>
+
+
+ </div>
+ <div class="padding-btm-60"></div>
+<%- include("partials/footer") %>
